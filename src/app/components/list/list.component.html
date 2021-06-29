@@ -1,0 +1,7 @@
+<ul *ngIf="showList">
+  <li *ngFor="let item of arr">
+    <a [routerLink]="item.id">
+      <span [ngClass]="{completed: item.completed}">{{ item.title }}</span>
+    </a>
+  </li>
+</ul>

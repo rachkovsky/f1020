@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,17 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'angular-f1020';
+
+  constructor(private http: HttpClient) { }
+
+  title: string = 'angular-f1020';
+  amount = 5;
+  public arr = [];
+
+
+
+  getTitle(str: string): string {
+    return str;
+  }
+
 }
