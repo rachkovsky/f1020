@@ -14,7 +14,9 @@ export class AppComponent {
   amount = 5;
   public arr = [];
 
-
+  clickHandler() {
+    console.log('olololo');
+  }
 
   getTitle(str: string): string {
     return str;

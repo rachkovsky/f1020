@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute} from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { DataServiceService } from '../../services/data-service/data-service.service';
 import { Todo } from '../../interfaces/Todo';
 
 
@@ -13,15 +13,15 @@ export class ListItemComponent implements OnInit {
 
   public item: Todo;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(
+    private route: ActivatedRoute,
+    private todoService: DataServiceService)
+  { }
 
   ngOnInit(): void {
     let id = this.route.snapshot.params.id;
-
-    this.http.get(`https://jsonplaceholder.typicode.com/todos/${id}`)
-    .subscribe((res: Todo) => {
+    this.todoService.getTodoById(id).subscribe((res) => {
       this.item = res;
-      console.log(res);
     })
   }
 
