@@ -1,7 +1,8 @@
 <header>
   <nav class="navbar navbar-dark bg-primary mb-5">
     <div class="container-fluid">
-      <button (click)="clickHandler()" class="btn btn-outline-warning" type="submit">Cklck me</button>
+      <a [routerLink]="['/login']" routerLinkActive="router-link-active" class="btn btn-warning" *ngIf="!isLoggedIn" href="">Login</a>
+      <button (click)="logout()" class="btn btn-warning" *ngIf="isLoggedIn" href="">Logout</button>
     </div>
   </nav>
 </header>

@@ -1,0 +1,15 @@
+<form (ngSubmit)="onSubmit()">
+  <div [formGroup]="loginForm" >
+    <label class="form-label" for="login">Login: </label>
+    <input class="form-control" id="login" type="text" formControlName="login">
+    <div *ngIf="loginForm.controls['login'].invalid && loginForm.controls['login'].touched" class="text-danger">username is required</div>
+
+    <label class="form-label mt-3" for="password">Password: </label>
+    <input class="form-control" id="password" type="password" formControlName="password">
+    <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="text-danger">password is required</div>
+
+
+  </div>
+  <button class="btn btn-primary mt-4">Login</button>
+
+</form>

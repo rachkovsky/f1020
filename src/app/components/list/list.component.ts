@@ -12,7 +12,6 @@ export class ListComponent implements OnInit {
 
   todos: Observable<any> = this.todoService.getTodos();
   showList = true;
-  subs: Subscription;
 
   public title = 'Some text';
 
@@ -20,10 +19,6 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     //
-  }
-
-  onKeyUp() {
-    console.log(this.title);
   }
 
 }
