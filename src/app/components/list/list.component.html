@@ -1,12 +1,26 @@
 <div class="mb-3">
-  <label for="exampleFormControlInput1" class="form-label">Email address</label>
-  <input (ngModel)="title" type="email" class="form-control" id="exampleFormControlInput1">
+  <label for="exampleFormControlInput1" class="form-label">Search: </label>
+  <input [formControl]="searchString" type="email" class="form-control" id="exampleFormControlInput1">
 </div>
 
-<ul *ngIf="showList">
-  <li *ngFor="let item of todos | async">
+<ul *ngIf="emptySearchInput">
+  <li *ngFor="let item of items">
     <a [routerLink]="item.id">
       <span [ngClass]="{completed: item.completed}">{{ item.title }}</span>
     </a>
   </li>
 </ul>
+
+<ul *ngIf="!emptySearchInput">
+  <li *ngFor="let item of filteredItems">
+    <a [routerLink]="item.id">
+      <span [ngClass]="{completed: item.completed}">{{ item.title }}</span>
+    </a>
+  </li>
+</ul>
+
+<div *ngIf="!emptySearchInput && filteredItems.length === 0">No todos found</div>
+
+<!-- <app-test [items]="todos | async">
+  <h1>olololo</h1>
+</app-test> -->

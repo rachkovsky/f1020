@@ -23,11 +23,10 @@ export class AppComponent implements OnInit {
   public arr = [];
 
   ngOnInit() {
-    //
     this.user.getUserStatus().subscribe(res => {
       this.isLoggedIn = res;
       if (res === false) {
-        this.router.navigate(["/login"]);
+        // this.router.navigate(["/login"]);
       }
     })
   }

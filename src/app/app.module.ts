@@ -9,12 +9,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ListComponent } from './components/list/list.component';
 import { ListItemComponent } from './components/list-item/list-item.component';
 import { LoginComponent } from './components/login/login.component';
+import { TestComponent } from './components/test/test.component';
 @NgModule({
   declarations: [
     AppComponent,
     ListComponent,
     ListItemComponent,
     LoginComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
